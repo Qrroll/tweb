@@ -24,12 +24,12 @@ export const SideBarCustom = (props: any) => {
                     {
                         key: '2',
                         icon: <VideoCameraOutlined />,
-                        label: 'nav 2',
+                        label: 'Kek',
                     },
                     {
                         key: '3',
                         icon: <UploadOutlined />,
-                        label: 'nav 3',
+                        label: 'Upload',
                     },
                 ]}
             />
