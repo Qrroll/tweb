@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Layout, theme } from 'antd';
-import {SideBarCustom} from "./layout/SideBarCustom/SideBarCustom";
-import {HeaderCustom} from "./layout/HeaderCustom/HeaderCustom";
-import {FooterCustom} from "./layout/FooterCustom/FooterCustom";
+import SideBarCustom from "./layout/SideBarCustom/SideBarCustom";
+import HeaderCustom from "./layout/HeaderCustom/HeaderCustom";
+import FooterCustom from "./layout/FooterCustom/FooterCustom";
+import ContentCustom from "./layout/ContentCustom/ContentCustom";
 
-const { Content } = Layout;
 
 const App: React.FC = () => {
 
@@ -23,9 +23,7 @@ const App: React.FC = () => {
 
                 <HeaderCustom sideBarIsOpen={sideBarIsOpen} setSideBarOpen={setSideBarOpen}/>
 
-                <Content style={{ margin: '24px 16px 0' }}>
-                    <div style={{ padding: 24, minHeight: 360, background: colorBgContainer }}>content</div>
-                </Content>
+                <ContentCustom />
 
                 <FooterCustom />
 

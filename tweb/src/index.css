@@ -1,3 +1,26 @@
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/*#components-layout-demo-custom-trigger .trigger {*/
+/*  padding: 0 24px;*/
+/*  font-size: 18px;*/
+/*  line-height: 64px;*/
+/*  cursor: pointer;*/
+/*  transition: color 0.3s;*/
+/*}*/
+
+/*#components-layout-demo-custom-trigger .trigger:hover {*/
+/*  color: #1890ff;*/
+/*}*/
+
+/*#components-layout-demo-custom-trigger .logo {*/
+/*  height: 32px;*/
+/*  margin: 16px;*/
+/*  background: rgba(255, 255, 255, 0.3);*/
+/*}*/
 /*:root {*/
 /*  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;*/
 /*  line-height: 1.5;*/
@@ -23,10 +46,6 @@
 /*  color: #535bf2;*/
 /*}*/
 
-body {
-  margin: 0;
-  padding: 0;
-}
 
 /*h1 {*/
 /*  font-size: 3.2em;*/

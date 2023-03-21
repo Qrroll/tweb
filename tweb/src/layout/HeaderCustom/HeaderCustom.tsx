@@ -3,7 +3,7 @@ import React from "react";
 import {MenuFoldOutlined, MenuUnfoldOutlined} from "@ant-design/icons";
 
 const { Header } = Layout;
-export const HeaderCustom = ({sideBarIsOpen, setSideBarOpen}: {sideBarIsOpen: any, setSideBarOpen: (param:boolean) => any }) => {
+const HeaderCustom = ({sideBarIsOpen, setSideBarOpen}: {sideBarIsOpen: any, setSideBarOpen: (param:boolean) => any }) => {
 //
     const {
         token: { colorBgContainer },
@@ -18,3 +18,5 @@ export const HeaderCustom = ({sideBarIsOpen, setSideBarOpen}: {sideBarIsOpen: an
         </Header>
     )
 }
+
+export default HeaderCustom

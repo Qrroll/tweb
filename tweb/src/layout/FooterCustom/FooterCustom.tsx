@@ -2,7 +2,7 @@ import {Layout} from "antd";
 import React from "react";
 
 const { Footer } = Layout;
-export const FooterCustom = () => {
+const FooterCustom = () => {
 
     return (
         <Footer style={{ textAlign: 'center' }}>
@@ -10,3 +10,4 @@ export const FooterCustom = () => {
         </Footer>
     )
 }
+export default FooterCustom

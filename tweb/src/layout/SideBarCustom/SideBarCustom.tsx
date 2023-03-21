@@ -2,7 +2,7 @@ import {Layout, Menu} from "antd";
 import {UploadOutlined, UserOutlined, VideoCameraOutlined} from "@ant-design/icons";
 import React, {useState} from "react";
 const { Sider } = Layout;
-export const SideBarCustom = (props: any) => {
+const SideBarCustom = (props: any) => {
 
     //const [sideBarIsOpen, setSideBarOpen] = props
 
@@ -36,3 +36,4 @@ export const SideBarCustom = (props: any) => {
         </Sider>
         )
 }
+export default SideBarCustom
