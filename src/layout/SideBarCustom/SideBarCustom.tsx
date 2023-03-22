@@ -1,5 +1,5 @@
 import {Layout, Menu} from "antd";
-import {UploadOutlined, UserOutlined, VideoCameraOutlined} from "@ant-design/icons";
+import {UploadOutlined, UserOutlined, AppstoreOutlined, LinkOutlined, SettingOutlined } from "@ant-design/icons";
 import React, {useState} from "react";
 const { Sider } = Layout;
 const SideBarCustom = (props: any) => {
@@ -23,13 +23,19 @@ const SideBarCustom = (props: any) => {
                     },
                     {
                         key: '2',
-                        icon: <VideoCameraOutlined />,
-                        label: 'Kek',
+                        icon: <AppstoreOutlined  />,
+                        label: 'Опции',
                     },
+
                     {
                         key: '3',
-                        icon: <UploadOutlined />,
-                        label: 'Upload',
+                        icon: <SettingOutlined />,
+                        label: 'Настройки',
+                    },
+                    {
+                        key: '4',
+                        icon: <LinkOutlined  />,
+                        label: 'Контакты',
                     },
                 ]}
             />
