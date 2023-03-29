@@ -10,7 +10,7 @@ const SideBarCustom = (props: any) => {
 
     return (
         <Sider trigger={null} collapsible={true} collapsed={props.sideBarIsOpen} onCollapse={() => props.setSideBarOpen(!props.sideBarIsOpen)}>
-            <div className="logo" />
+            <div className="logo"   />
             <Menu
                 theme="dark"
                 mode="inline"
@@ -40,6 +40,6 @@ const SideBarCustom = (props: any) => {
                 ]}
             />
         </Sider>
-        )
+    )
 }
 export default SideBarCustom
