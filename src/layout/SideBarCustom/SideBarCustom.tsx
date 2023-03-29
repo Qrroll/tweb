@@ -1,5 +1,5 @@
 import {Layout, Menu} from "antd";
-import {UploadOutlined, UserOutlined, AppstoreOutlined, LinkOutlined, SettingOutlined } from "@ant-design/icons";
+import { UserOutlined, AppstoreOutlined, LinkOutlined, SettingOutlined } from "@ant-design/icons";
 import React, {useState} from "react";
 const { Sider } = Layout;
 const SideBarCustom = (props: any) => {
