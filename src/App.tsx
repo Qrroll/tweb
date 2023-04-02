@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import { Layout, theme } from 'antd';
 import HeaderCustom from "./layout/HeaderCustom/HeaderCustom";
 import FooterCustom from "./layout/FooterCustom/FooterCustom";
 import ContentCustom from "./layout/ContentCustom/ContentCustom";
 import {observer} from "mobx-react";
+import {useRootStore} from "./mst/stores/store.Root.Store";
 
 
 const App: React.FC = observer(() => {
@@ -11,6 +12,13 @@ const App: React.FC = observer(() => {
     const {
         token: { colorBgContainer },
     } = theme.useToken();
+
+
+    const store = useRootStore()
+
+    useEffect(() => {
+        store.fetchCarts()
+    }, [])
 
     //const [sideBarIsOpen, setSideBarOpen] = useState(true);
 
@@ -23,7 +31,7 @@ const App: React.FC = observer(() => {
 
             <HeaderCustom />
 
-            <ContentCustom />
+            <ContentCustom dataCarts={store.carts} />
 
             <FooterCustom />
 

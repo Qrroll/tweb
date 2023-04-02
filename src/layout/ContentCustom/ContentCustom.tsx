@@ -3,6 +3,7 @@ import {Breadcrumb, Button, Form, Input, Layout, Menu, Switch, theme} from "antd
 import {HomeOutlined, SettingOutlined, UserOutlined} from "@ant-design/icons";
 import './ContentCustom.css'
 import {User} from "../../mst/models/model.User";
+import {useRootStore} from "../../mst/stores/store.Root.Store";
 
 const { Content } = Layout;
 const changeUser = () => {
@@ -18,15 +19,15 @@ const myData = User.create({
     name: "Сергей",
     group: "CR-203"
 })
-useEffect(() => {
-    store.fetchProducts()
-}, [])
-fetch('https://dummyjson.com/products/1')
+
+
+
+fetch('https://dummyjson.com/carts/2')
     .then(res => res.json())
     .then(json => console.log(json))
 
 
-const ContentCustom = () => {
+const ContentCustom = (dataCarts: any) => {
     const {
         token: { colorBgContainer },
     } = theme.useToken();
@@ -39,6 +40,7 @@ const ContentCustom = () => {
         console.log('Failed:', errorInfo);
     };
 
+    console.log('dataCarts: ', dataCarts)
     return (
         <Content
             className="site-layout"
@@ -134,11 +136,19 @@ const ContentCustom = () => {
                     </Form>
 
 
+                    <div style={{marginLeft: '50px'}}>
+                        <h3> DummyList </h3>
+                        <p>
+                            {
+                                // dataCarts.map((item, index) => {
+                                //     return (
+                                //         <div>{ item.title }</div>
+                                //     )
+                                // })
+                            }
+                        </p>
+                    </div>
 
-                    <h3> DummyList </h3>
-                    <p>
-                        {res.name}
-                    </p>
 
                 </div>
 

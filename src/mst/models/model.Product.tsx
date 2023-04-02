@@ -7,9 +7,6 @@ export const Product = types.model('ProductModel', {
     price: 0,
     quantity: 0,
     total: 0,
-    discountPercentage: 0,
+    discountPercentage: 0.0,
     discountedPrice: 0,
-    category: '',
-    thumbnail: '',
-    images: types.array(types.string)
 })
