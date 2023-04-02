@@ -1,16 +1,31 @@
-import {Layout, Menu} from "antd";
+import { Menu } from "antd";
 import { UserOutlined, AppstoreOutlined, LinkOutlined, SettingOutlined } from "@ant-design/icons";
 import React, {useState} from "react";
-const { Sider } = Layout;
-const SideBarCustom = (props: any) => {
+import Sider from "antd/es/layout/Sider";
+
+
+const SiderCustom = (props: any) => {
 
     //const [sideBarIsOpen, setSideBarOpen] = props
 
     console.log('>>collapse ', props.sideBarIsOpen)
 
     return (
-        <Sider trigger={null} collapsible={true} collapsed={props.sideBarIsOpen} onCollapse={() => props.setSideBarOpen(!props.sideBarIsOpen)}>
-            <div className="logo"   />
+        <Sider
+            style={{
+                // overflow: 'auto',
+                // height: '100vh',
+                // position: 'relative',
+                // left: 0,
+                // top: 64,
+                // bottom: 0
+            }}
+            trigger={null}
+            collapsible={true}
+            collapsed={props.sideBarIsOpen}
+            onCollapse={() => props.setSideBarOpen(!props.sideBarIsOpen)}
+        >
+
             <Menu
                 theme="dark"
                 mode="inline"
@@ -42,4 +57,4 @@ const SideBarCustom = (props: any) => {
         </Sider>
     )
 }
-export default SideBarCustom
+export default SiderCustom

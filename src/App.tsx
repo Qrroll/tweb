@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Layout, theme } from 'antd';
-import SideBarCustom from "./layout/SideBarCustom/SideBarCustom";
 import HeaderCustom from "./layout/HeaderCustom/HeaderCustom";
 import FooterCustom from "./layout/FooterCustom/FooterCustom";
 import ContentCustom from "./layout/ContentCustom/ContentCustom";
@@ -12,22 +11,20 @@ const App: React.FC = () => {
         token: { colorBgContainer },
     } = theme.useToken();
 
-    const [sideBarIsOpen, setSideBarOpen] = useState(true);
+    //const [sideBarIsOpen, setSideBarOpen] = useState(true);
 
     return (
-        <Layout>
+        <Layout
+            style={{
+                minHeight: '100vh'
+            }}
+        >
 
-            <SideBarCustom sideBarIsOpen={sideBarIsOpen} setSideBarOpen={setSideBarOpen}/>
+            <HeaderCustom />
 
-            <Layout className="site-layout">
+            <ContentCustom />
 
-                <HeaderCustom sideBarIsOpen={sideBarIsOpen} setSideBarOpen={setSideBarOpen}/>
-
-                <ContentCustom />
-
-                <FooterCustom />
-
-            </Layout>
+            <FooterCustom />
 
         </Layout>
     );

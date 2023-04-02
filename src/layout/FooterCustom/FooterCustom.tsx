@@ -5,7 +5,11 @@ const { Footer } = Layout;
 const FooterCustom = () => {
 
     return (
-        <Footer style={{ textAlign: 'center' }}>
+        <Footer
+            style={{
+                textAlign: 'center'
+            }}
+        >
             Kek Design ©2023 Created by Qrroll
         </Footer>
     )
