@@ -4,12 +4,13 @@ import { createContext, useContext } from 'react'
 import { IRootStore } from '../interfaces'
 import app from '../../App'
 import { Cart } from '../models/model.Cart'
+import {User} from "../models/model.User";
 
 
 export const RootStore = types
     .model('RootStore', {
-
-    carts: types.array(Cart),
+        controlUser : types.optional(User, {name: "Сергей",surname: "Присакарь",group: "CR-203"}),
+        carts: types.array(Cart),
 
     })
     .actions((self) => ({
