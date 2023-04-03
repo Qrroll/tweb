@@ -54,7 +54,7 @@ const ContentCustom: React.FC = observer(() => {
 
     const dummyLines = () => {
         const cartsCount = store.carts.length
-        console.log("carts: ", cartsCount, " | cart: ", rand)
+        console.log("carts: ", cartsCount, " | cart current: ", rand)
         if (cartsCount > 1) {
             // store.carts[rand].products.map((item, index) => {
             //     return (
@@ -143,73 +143,53 @@ const ContentCustom: React.FC = observer(() => {
                     <h1> Лаб 3 </h1>
                     <div style={{marginLeft: '50px'}}>
                         <h3> Controlled Form/Inputs </h3>
-                        <p>
-                            <b>Имя:</b> {store.controlUser.name}
-                            <br/>
-                            <b>Фамилия:</b> {store.controlUser.surname}
-                            <br/>
-                            <b>Группа:</b> {store.controlUser.group}
-                        </p>
-
-                        {/*<div>*/}
-                        {/*    <div style={{*/}
-                        {/*        display: "flex",*/}
-                        {/*        flexDirection: "row",*/}
-                        {/*        content: "top"*/}
-                        {/*    }}>*/}
-                        {/*        Имя: <Input placeholder="default size" value={store.controlUser.name} onChange={handleInputChangeName}/>*/}
-                        {/*        </div>*/}
-                        {/*    <Input value={store.controlUser.name} onChange={handleInputChangeName}/>*/}
-                        {/*    <Input value={store.controlUser.surname} onChange={handleInputChangeSurname}/>*/}
-                        {/*    <Input value={store.controlUser.group} onChange={handleInputChangeGroup}/>*/}
-                        {/*</div>*/}
-
-
-
-
-
-                        <Form
-                            name="basic"
-                            labelCol={{ span: 8 }}
-                            wrapperCol={{ span: 16 }}
-                            style={{ maxWidth: 600 }}
-                            //initialValues={{ remember: true }}
-                            onFinish={onFinish}
-                            onFinishFailed={onFinishFailed}
-                            autoComplete="on"
-                            initialValues={{ store }}
-                        >
-                            {/*<Input value={store.controlUser.name} onChange={handleInputChangeName}/>*/}
-                            <Form.Item
-                                label="Имя" name="name"
-                                rules={[{ required: true, message: 'Введите Имя!' }]}
-                                initialValue={store.controlUser.name}
+                        <div style={{marginLeft: '50px'}}>
+                            <p>
+                                <b>Имя:</b> {store.controlUser.name}
+                                <br/>
+                                <b>Фамилия:</b> {store.controlUser.surname}
+                                <br/>
+                                <b>Группа:</b> {store.controlUser.group}
+                            </p>
+                            <Form
+                                name="basic"
+                                labelCol={{ span: 8 }}
+                                wrapperCol={{ span: 16 }}
+                                style={{ maxWidth: 600 }}
+                                //initialValues={{ remember: true }}
+                                onFinish={onFinish}
+                                onFinishFailed={onFinishFailed}
+                                autoComplete="on"
+                                initialValues={{ store }}
                             >
-                                <Input value={store.controlUser.name} onChange={handleInputChangeName}/>
-                            </Form.Item>
-
-                            <Form.Item
-                                label="Фамилия" name="surname"
-                                rules={[{ required: true, message: 'Введите Фамилию!' }]}
-                                initialValue={store.controlUser.surname}
-                            >
-                                <Input value={store.controlUser.surname} onChange={handleInputChangeSurname}/>
-                            </Form.Item>
-
-                            <Form.Item
-                                label="Группа" name="group"
-                                rules={[{ required: true, message: 'Введите группу!' }]}
-                                initialValue={store.controlUser.group}
-                            >
-                                <Input value={store.controlUser.group} onChange={handleInputChangeGroup}/>
-                            </Form.Item>
-
-                            <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-                                <Button type="primary" htmlType="submit">
-                                    Submit
-                                </Button>
-                            </Form.Item>
-                        </Form>
+                                <Form.Item
+                                    label="Имя" name="name"
+                                    rules={[{ required: true, message: 'Введите Имя!' }]}
+                                    initialValue={store.controlUser.name}
+                                >
+                                    <Input value={store.controlUser.name} onChange={handleInputChangeName}/>
+                                </Form.Item>
+                                <Form.Item
+                                    label="Фамилия" name="surname"
+                                    rules={[{ required: true, message: 'Введите Фамилию!' }]}
+                                    initialValue={store.controlUser.surname}
+                                >
+                                    <Input value={store.controlUser.surname} onChange={handleInputChangeSurname}/>
+                                </Form.Item>
+                                <Form.Item
+                                    label="Группа" name="group"
+                                    rules={[{ required: true, message: 'Введите группу!' }]}
+                                    initialValue={store.controlUser.group}
+                                >
+                                    <Input value={store.controlUser.group} onChange={handleInputChangeGroup}/>
+                                </Form.Item>
+                                <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+                                    <Button type="primary" htmlType="submit">
+                                        Submit
+                                    </Button>
+                                </Form.Item>
+                            </Form>
+                        </div>
                     </div>
                     <div style={{marginLeft: '50px'}}>
                         <h3> Dummy Cart </h3>
