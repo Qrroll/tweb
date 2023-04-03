@@ -3,7 +3,8 @@ import {Breadcrumb, Button, Form, Input, Layout, Menu, Switch, theme} from "antd
 import {HomeOutlined, SettingOutlined, UserOutlined} from "@ant-design/icons";
 import './ContentCustom.css'
 import {User} from "../../mst/models/model.User";
-import {useRootStore} from "../../mst/stores/store.Root.Store";
+import {RootStore, store, useRootStore} from "../../mst/stores/store.Root.Store";
+import {observer} from "mobx-react";
 
 const { Content } = Layout;
 const changeUser = () => {
@@ -20,14 +21,12 @@ const myData = User.create({
     group: "CR-203"
 })
 
+interface ContentCustomProps {
+    store: typeof RootStore;
+}
 
-
-fetch('https://dummyjson.com/carts/2')
-    .then(res => res.json())
-    .then(json => console.log(json))
-
-
-const ContentCustom = (dataCarts: any) => {
+//const ContentCustom: React.FC<ContentCustomProps> = ({ store }) => {
+const ContentCustom  = observer(() => {
     const {
         token: { colorBgContainer },
     } = theme.useToken();
@@ -40,7 +39,41 @@ const ContentCustom = (dataCarts: any) => {
         console.log('Failed:', errorInfo);
     };
 
-    console.log('dataCarts: ', dataCarts)
+    const rand = Math.floor(Math.random() * 20) + 1;
+
+    const dummyLines = () => {
+        const exist = store.carts.length
+        console.log("dummylines: ", exist)
+        if (store.carts.length > 1) {
+            // store.carts[rand].products.map((item, index) => {
+            //     return (
+            //         <li key={item.id}>{item.title}</li>
+            //     );
+            // })
+            // return  (
+            //     <div>{store.carts[rand].products[0].title}</div>
+            //
+            // )
+            return (
+                <div>
+                    {
+                        store.carts[rand].products.map((item, index) => {
+                                return (
+                                    <li key={item.id}>{item.title}</li>
+                                );
+                            })
+                    }
+                </div>
+            )
+        } else {
+            return (
+                <div>Ошибка</div>
+            );
+        }
+    }
+
+    console.log('carts[', rand, ']: ', store.carts[rand])
+    console.log('carts: ', store.carts)
     return (
         <Content
             className="site-layout"
@@ -138,15 +171,27 @@ const ContentCustom = (dataCarts: any) => {
 
                     <div style={{marginLeft: '50px'}}>
                         <h3> DummyList </h3>
-                        <p>
+
+                            {/*{*/}
+                            {/*    store.carts.length > 1 ? (*/}
+                            {/*        <span>Количество меньше 10</span>*/}
+                            {/*    ) : (*/}
+                            {/*        <span>Количество больше или равно 10</span>*/}
+                            {/*    )*/}
+                            {/*}*/}
+                        <ul>
                             {
-                                // dataCarts.map((item, index) => {
+                                dummyLines()
+                            }
+                            {
+                                // store.carts.map((item, index) => {
                                 //     return (
-                                //         <div>{ item.title }</div>
-                                //     )
+                                //     <li key={item.id}>{item.id}</li>
+                                //     //<div>{item.title}</div>
+                                //     );
                                 // })
                             }
-                        </p>
+                        </ul>
                     </div>
 
 
@@ -163,6 +208,6 @@ const ContentCustom = (dataCarts: any) => {
             </div>
         </Content>
     )
-}
+})
 export default ContentCustom
 

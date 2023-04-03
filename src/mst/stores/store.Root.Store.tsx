@@ -14,16 +14,11 @@ export const RootStore = types
     })
     .actions((self) => ({
         fetchCarts: flow(function * () {
-            //const rand = Math.floor(Math.random() * 21) + 1;
-            const srl = 'https://dummyjson.com/carts' //+ rand.toString()
+            const srl = 'https://dummyjson.com/carts'
             const res = yield * toGenerator(fetch(srl).then(res => res.json()))
-            console.log('>>res', res)
-        applySnapshot(self.carts, res.carts)
-
-        console.log('>>self.carts', self.carts)
-    }),
-
-} ))
+            applySnapshot(self.carts, res.carts)
+        }),
+    }))
 
 export const store = RootStore.create({})
 
