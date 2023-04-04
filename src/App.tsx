@@ -6,10 +6,6 @@ import ContentCustom from "./layout/ContentCustom/ContentCustom";
 import {observer} from "mobx-react";
 import {useRootStore} from "./mst/stores/store.Root.Store";
 
-
-
-
-
 const App: React.FC = observer(() => {
 
     const {
@@ -17,13 +13,14 @@ const App: React.FC = observer(() => {
     } = theme.useToken();
 
     const store = useRootStore()
+
     useEffect(() => {
+
         store.fetchCarts()
+        
     }, [])
 
-
     //const [sideBarIsOpen, setSideBarOpen] = useState(true);
-
     return (
         <Layout
             style={{
@@ -33,7 +30,6 @@ const App: React.FC = observer(() => {
 
             <HeaderCustom />
 
-            {/*<ContentCustom dataCarts={store.carts} />*/}
             <ContentCustom  />
 
             <FooterCustom />

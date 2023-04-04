@@ -10,7 +10,7 @@ const Lab2 = () => {
     });
     return (
         <div>
-            <h1> Лаб 2 </h1>
+            <p>Просто выводятся данные из модели </p>
             <p><b>Имя:</b> {myData.name}, <b>Фамилия:</b> {myData.surname}, <b>Группа:</b> {myData.group}</p>
         </div>
     )

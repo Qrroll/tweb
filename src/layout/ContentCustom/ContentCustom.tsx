@@ -1,18 +1,28 @@
 import React from "react";
-import {Layout, theme} from "antd";
+
+import {Collapse, Layout, theme} from "antd";
+import { CaretRightOutlined } from '@ant-design/icons';
+
 import './ContentCustom.css'
 import {observer} from "mobx-react";
 import Lab2 from "./Parts/Lab2";
 import Lab3 from "./Parts/Lab3";
 import BreadcrumbCustom from "./Parts/BreadcrumbCustom";
+import Lab4 from "./Parts/Lab4";
 
 const { Content } = Layout;
+const { Panel } = Collapse;
 
 const ContentCustom: React.FC = observer(() => {
 
-    const {
-        token: { colorBgContainer },
-    } = theme.useToken();
+    const { token } = theme.useToken();
+
+    const panelStyle = {
+        marginBottom: 24,
+        background: token.colorFillAlter,
+        borderRadius: token.borderRadiusLG,
+        border: 'none',
+    };
 
     // console.log('carts[', rand, ']: ', store.carts[rand])
     // console.log('carts: ', store.carts)
@@ -30,16 +40,32 @@ const ContentCustom: React.FC = observer(() => {
             >
                 <BreadcrumbCustom />
             </div>
+
+
             <div
                 style={{
                     padding: 24,
                     minHeight: '70vh',
-                    background: colorBgContainer
+                    background: token.colorBgContainer
                 }}
             >
-                <div>{Lab3()}</div>
+                <Collapse
+                    bordered={false}
+                    defaultActiveKey={['3']}
+                    expandIcon={({ isActive }) => <CaretRightOutlined rotate={isActive ? 90 : 0} />}
+                    style={{ background: token.colorBgContainer }}
 
-                <div>{Lab2()}</div>
+                >
+                    <Panel header="Лабороторная работа № 4" key="4" style={panelStyle}>
+                        <Lab4 />
+                    </Panel>
+                    <Panel header="Лабороторная работа № 3" key="3" style={panelStyle}>
+                        <Lab3 />
+                    </Panel>
+                    <Panel header="Лабороторная работа № 2" key="2" style={panelStyle}>
+                        <Lab2 />
+                    </Panel>
+                </Collapse>
             </div>
         </Content>
     )
