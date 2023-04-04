@@ -56,13 +56,13 @@ const ContentCustom: React.FC = observer(() => {
                     style={{ background: token.colorBgContainer }}
 
                 >
-                    <Panel header="Лабороторная работа № 4" key="4" style={panelStyle}>
+                    <Panel header="Лабораторная работа № 4" key="4" style={panelStyle}>
                         <Lab4 />
                     </Panel>
-                    <Panel header="Лабороторная работа № 3" key="3" style={panelStyle}>
+                    <Panel header="Лабораторная работа № 3" key="3" style={panelStyle}>
                         <Lab3 />
                     </Panel>
-                    <Panel header="Лабороторная работа № 2" key="2" style={panelStyle}>
+                    <Panel header="Лабораторная работа № 2" key="2" style={panelStyle}>
                         <Lab2 />
                     </Panel>
                 </Collapse>
