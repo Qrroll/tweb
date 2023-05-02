@@ -1,5 +1,5 @@
-import { types, onSnapshot } from "mobx-state-tree"
-import {User} from "./model.User"
+import { types } from "mobx-state-tree"
+import {User} from "./user"
 
 
 export const Users = types

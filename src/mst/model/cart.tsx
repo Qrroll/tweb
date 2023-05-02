@@ -1,5 +1,5 @@
 import {types} from "mobx-state-tree";
-import {Product} from "./model.Product";
+import {Product} from "./product";
 
 export const Cart = types.model('Cart', {
     id: types.identifierNumber,

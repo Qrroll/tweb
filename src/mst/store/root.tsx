@@ -1,10 +1,8 @@
 import { applySnapshot, flow, toGenerator, types } from 'mobx-state-tree'
-
 import { createContext, useContext } from 'react'
-import { IRootStore } from '../interfaces'
-import app from '../../App'
-import { Cart } from '../models/model.Cart'
-import {User} from "../models/model.User";
+import { IRootStore } from '../interface'
+import { Cart } from '../model/cart'
+import {User} from "../model/user";
 
 
 export const RootStore = types

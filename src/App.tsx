@@ -1,36 +1,33 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect } from 'react';
 import { Layout, theme } from 'antd';
-import HeaderCustom from "./layout/HeaderCustom/HeaderCustom";
-import FooterCustom from "./layout/FooterCustom/FooterCustom";
-import ContentCustom from "./layout/ContentCustom/ContentCustom";
 import {observer} from "mobx-react";
-import {useRootStore} from "./mst/stores/store.Root.Store";
+import {useRootStore} from "./mst/store/root";
+import { Switch, Route } from 'react-router-dom';
+import HeaderCustom from "./layout/header/header";
+import FooterCustom from "./layout/footer/footer";
+import pageLabs from "./layout/content/pages/labs/page.labs";
+import pageHome from "./layout/content/pages/home/page.home";
 
 const App: React.FC = observer(() => {
 
-    const {
-        token: { colorBgContainer },
-    } = theme.useToken();
+
 
     const store = useRootStore()
 
     useEffect(() => {
-
         store.fetchCarts()
-        
     }, [])
 
     //const [sideBarIsOpen, setSideBarOpen] = useState(true);
     return (
-        <Layout
-            style={{
-                minHeight: '100vh'
-            }}
-        >
+        <Layout style={{ minHeight: '100vh' }} >
 
             <HeaderCustom />
 
-            <ContentCustom  />
+            <Switch>
+                <Route exact path="/" component={pageHome} />
+                <Route exact path="/labs" component={pageLabs} />
+            </Switch>
 
             <FooterCustom />
 
