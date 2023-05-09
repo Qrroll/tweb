@@ -12,6 +12,7 @@ import pageHome from "./layout/content/pages/home/page.home";
 import pageTodo from "./layout/content/pages/todo/page.todo";
 import pageProfile from "./layout/content/pages/profile/page.profile";
 import pageProfileSettings from "./layout/content/pages/profile/settings/page.profile.settings";
+import pageLogin from "./layout/content/pages/login/page.login";
 
 const App: React.FC = observer(() => {
 
@@ -33,6 +34,7 @@ const App: React.FC = observer(() => {
                 <Route exact path="/todo" component={pageTodo} />
                 <Route exact path="/profile" component={pageProfile} />
                 <Route exact path="/profile/settings" component={pageProfileSettings} />
+                <Route exact path="/login" component={pageLogin} />
             </Switch>
 
             <FooterCustom />

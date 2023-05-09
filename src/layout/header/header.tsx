@@ -33,8 +33,8 @@ const HeaderCustom: React.FC = observer(  () => {
                     <Menu.Item key="4" icon={<UserOutlined />}>
                         <Link to="/profile">Профиль</Link>
                     </Menu.Item>
-                    <Menu.Item key="5" icon={<LinkOutlined />}>
-                        <Link to="/contacts">Контакты</Link>
+                    <Menu.Item key="5" icon={<SettingOutlined />}>
+                        <Link to="/login">Авторизация</Link>
                     </Menu.Item>
                 </Menu>
 
