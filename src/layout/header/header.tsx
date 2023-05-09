@@ -1,6 +1,6 @@
 import React from "react";
 import { Layout, Menu } from "antd";
-import { AppstoreOutlined, HomeOutlined, LinkOutlined, SettingOutlined } from "@ant-design/icons";
+import { AppstoreOutlined, HomeOutlined, LinkOutlined, SettingOutlined, UserOutlined } from "@ant-design/icons";
 import './header.css'
 import { Link } from "react-router-dom";
 import { observer } from "mobx-react";
@@ -30,8 +30,8 @@ const HeaderCustom: React.FC = observer(  () => {
                     <Menu.Item key="3" icon={<AppstoreOutlined />}>
                         <Link to="/todo">Todo</Link>
                     </Menu.Item>
-                    <Menu.Item key="4" icon={<SettingOutlined />}>
-                        <Link to="/settings">Настройки</Link>
+                    <Menu.Item key="4" icon={<UserOutlined />}>
+                        <Link to="/profile">Профиль</Link>
                     </Menu.Item>
                     <Menu.Item key="5" icon={<LinkOutlined />}>
                         <Link to="/contacts">Контакты</Link>

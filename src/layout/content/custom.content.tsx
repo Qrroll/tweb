@@ -16,7 +16,9 @@ const ContentCustom: React.FC<ContentCustomProps> = observer(({ breadcrumbChild,
     return (
         <Content
             className="site-layout"
-            style={{ padding: '0' }}
+            style={{ padding: '0',
+
+            }}
         >
             <div style={{ paddingLeft: '24px' }} >
                 {breadcrumbChild}
@@ -27,7 +29,8 @@ const ContentCustom: React.FC<ContentCustomProps> = observer(({ breadcrumbChild,
                 style={{
                     padding: 24,
                     minHeight: '70vh',
-                    background: token.colorBgContainer
+                    //background: token.colorBgContainer
+
                 }}
             >
                 {contentChild}

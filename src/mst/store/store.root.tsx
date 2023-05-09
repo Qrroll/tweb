@@ -4,6 +4,7 @@ import { IRootStore } from '../interface'
 import { modelCart } from '../model/model.cart'
 import {modelUser} from "../model/model.user";
 import {modelTodos} from "../model/model.todos";
+import {modelProfile} from "../model/model.profile";
 
 export const storeRoot = types.compose(
     modelTodos,
@@ -11,6 +12,7 @@ export const storeRoot = types.compose(
         controlUser : types.optional(modelUser, {name: "Сергей",surname: "Присакарь",group: "CR-203"}),
         carts: types.array(modelCart),
         title: types.optional(types.string, "Qrroll"),
+        userProfile: types.optional(modelProfile, {}),
     })
     ).actions((self) => ({
         fetchCarts: flow(function * () {

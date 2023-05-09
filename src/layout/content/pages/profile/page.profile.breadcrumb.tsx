@@ -1,9 +1,9 @@
-import { CheckOutlined, HomeOutlined } from "@ant-design/icons";
+import { UserOutlined, HomeOutlined } from "@ant-design/icons";
 import React from "react";
 import { Breadcrumb } from "antd";
 import { Link } from "react-router-dom";
 
-const PageTodoBreadcrumb = () => {
+const PageProfileBreadcrumb = () => {
 
     return (
         <Breadcrumb
@@ -19,8 +19,8 @@ const PageTodoBreadcrumb = () => {
                 {
                     title: (
                         <>
-                            <CheckOutlined />
-                            <span>Todo</span>
+                            <UserOutlined />
+                            <span>Profile</span>
                         </>
                     ),
                 }
@@ -28,4 +28,4 @@ const PageTodoBreadcrumb = () => {
         />
     )
 }
-export default PageTodoBreadcrumb
+export default PageProfileBreadcrumb

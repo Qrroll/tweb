@@ -63,7 +63,7 @@ const Lab_3 = observer(() => {
         }}>
             <Collapse
                 bordered={false}
-                defaultActiveKey={['2']}
+                //defaultActiveKey={['2']}
                 expandIcon={({ isActive }) => <CaretRightOutlined rotate={isActive ? 90 : 0} />}
                 //style={{ background: token.colorBgContainer }}
 

@@ -12,8 +12,7 @@ const PageLabsBreadcrumb = () => {
                 {
                     title: (
                         <>
-                            <HomeOutlined />
-                            <Link to="/"><span>Home</span></Link>
+                            <Link to="/"><HomeOutlined /> <span>Home</span></Link>
                         </>
                     ),
                 },

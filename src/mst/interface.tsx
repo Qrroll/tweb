@@ -1,6 +1,6 @@
 import { Instance, SnapshotIn, SnapshotOut } from 'mobx-state-tree'
 import { storeRoot } from './store/store.root'
-import modelTodo from "./model/model.todo";
+import { modelTodo } from "./model/model.todo";
 
 export interface IRootStore extends Instance<typeof storeRoot> {}
 export interface IRootStoreSnapshotIn extends SnapshotIn<typeof storeRoot> {}
