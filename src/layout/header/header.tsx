@@ -27,10 +27,13 @@ const HeaderCustom: React.FC = observer(  () => {
                     <Menu.Item key="2" icon={<AppstoreOutlined />}>
                         <Link to="/labs">Лабораторные</Link>
                     </Menu.Item>
-                    <Menu.Item key="3" icon={<SettingOutlined />}>
+                    <Menu.Item key="3" icon={<AppstoreOutlined />}>
+                        <Link to="/todo">Todo</Link>
+                    </Menu.Item>
+                    <Menu.Item key="4" icon={<SettingOutlined />}>
                         <Link to="/settings">Настройки</Link>
                     </Menu.Item>
-                    <Menu.Item key="4" icon={<LinkOutlined />}>
+                    <Menu.Item key="5" icon={<LinkOutlined />}>
                         <Link to="/contacts">Контакты</Link>
                     </Menu.Item>
                 </Menu>

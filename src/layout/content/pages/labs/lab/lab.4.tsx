@@ -1,5 +1,5 @@
 import React from "react";
-import {store} from "../../../../../mst/store/root";
+import {store} from "../../../../../mst/store/store.root";
 import {observer} from "mobx-react";
 import { Form, Input } from "antd";
 import {autorun} from "mobx";

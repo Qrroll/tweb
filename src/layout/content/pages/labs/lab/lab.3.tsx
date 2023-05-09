@@ -1,5 +1,5 @@
 import React from "react";
-import {store} from "../../../../../mst/store/root";
+import {store} from "../../../../../mst/store/store.root";
 import {Button, Collapse, Form, Input, theme} from "antd";
 import {observer} from "mobx-react";
 import {CaretRightOutlined} from "@ant-design/icons";

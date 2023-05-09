@@ -1,7 +1,7 @@
 import { types } from 'mobx-state-tree'
 
-export const User = types
-    .model("User", {
+export const modelUser = types
+    .model("modelUser", {
         name: '',
         group: '',
         surname: '',

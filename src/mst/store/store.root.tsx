@@ -1,17 +1,18 @@
 import { applySnapshot, flow, toGenerator, types } from 'mobx-state-tree'
 import { createContext, useContext } from 'react'
 import { IRootStore } from '../interface'
-import { Cart } from '../model/cart'
-import {User} from "../model/user";
+import { modelCart } from '../model/model.cart'
+import {modelUser} from "../model/model.user";
+import {modelTodos} from "../model/model.todos";
 
-
-export const RootStore = types
-    .model('RootStore', {
-        controlUser : types.optional(User, {name: "Сергей",surname: "Присакарь",group: "CR-203"}),
-        carts: types.array(Cart),
-        title: types.optional(types.string, "Qrroll")
+export const storeRoot = types.compose(
+    modelTodos,
+    types.model('storeRoot', {
+        controlUser : types.optional(modelUser, {name: "Сергей",surname: "Присакарь",group: "CR-203"}),
+        carts: types.array(modelCart),
+        title: types.optional(types.string, "Qrroll"),
     })
-    .actions((self) => ({
+    ).actions((self) => ({
         fetchCarts: flow(function * () {
             const srl = 'https://dummyjson.com/carts'
             const res = yield * toGenerator(fetch(srl).then(res => res.json()))
@@ -22,7 +23,7 @@ export const RootStore = types
         }
     }))
 
-export const store = RootStore.create({})
+export const store = storeRoot.create()
 export const StoreContext = createContext<IRootStore>(store)
 export const useRootStore = () => useContext(StoreContext)
 

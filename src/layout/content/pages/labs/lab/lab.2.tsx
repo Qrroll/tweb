@@ -1,9 +1,9 @@
 import React from "react";
-import {User} from "../../../../../mst/model/user";
+import {modelUser} from "../../../../../mst/model/model.user";
 
 const Lab_2 = () => {
 
-    const myData = User.create({
+    const myData = modelUser.create({
         surname: "Присакарь",
         name: "Сергей",
         group: "CR-203"
