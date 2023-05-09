@@ -24,7 +24,7 @@ const App: React.FC = observer(() => {
 
     //const [sideBarIsOpen, setSideBarOpen] = useState(true);
     return (
-        <Layout style={{ minHeight: '100vh', background: '#eee' }} >
+        <Layout style={{ minHeight: '100vh', background: '#ccc' }} >
 
             <HeaderCustom />
 
