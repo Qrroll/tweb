@@ -10,7 +10,7 @@ export const PageLoginBreadcrumb = () => {
             style={{ margin: '16px 0' }}
             items={[
                 {
-                    title: (<> <Link to="/"><HomeOutlined /> <span>Домик</span></Link> </> ),
+                    title: (<> <Link to="/"><HomeOutlined /> <span>Home</span></Link> </> ),
                 },
                 {
                     title: (

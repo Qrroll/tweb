@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout, Menu } from "antd";
+import {Image, Layout, Menu} from "antd";
 import { AppstoreOutlined, HomeOutlined, LinkOutlined, SettingOutlined, UserOutlined } from "@ant-design/icons";
 import './header.css'
 import { Link } from "react-router-dom";
@@ -14,11 +14,21 @@ const HeaderCustom: React.FC = observer(  () => {
                 style={{
                     float: 'left',
                     width: 120,
-                    height: 31,
-                    margin: '16px 24px 16px 0',
+                    height: 64,
+                    margin: '0 24px 0 0',
                     background: 'rgba(255, 255, 255, 0.2)',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center'
                 }}
-            />
+            >
+                <Image
+                    style={{ width: 120,
+                        height: 64,}}
+                    src='https://downloader.disk.yandex.ru/preview/ac3e6c3dc74f38258e007c2d2205474915af4ca080855be0c3edc1bb587b07d6/645ae634/UwI43ycFOUsblUmQkE0Ue4ffjGYIl4IzTm4L9zg7SUDV3NJS6oz-H2dFFQvvKGPUHPh8Kn1yD_holLD_SGRF9g%3D%3D?uid=0&filename=2022-11-04%2009-57-08.JPG&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048'
+                    preview={false}
+                />
+            </div>
 
                 <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
                     <Menu.Item key="1" icon={<HomeOutlined />}>
