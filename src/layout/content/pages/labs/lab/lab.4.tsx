@@ -1,10 +1,10 @@
 import React from "react";
-import {store} from "../../../mst/stores/store.Root.Store";
+import {store} from "../../../../../mst/store/store.root";
 import {observer} from "mobx-react";
-import {Button, Form, Input} from "antd";
+import { Form, Input } from "antd";
 import {autorun} from "mobx";
 
-const Lab4 = observer(() => {
+const Lab_4 = observer(() => {
 
     autorun(() => {
         document.title = store.title;
@@ -38,4 +38,4 @@ const Lab4 = observer(() => {
     )
 
 })
-export default Lab4
+export default Lab_4

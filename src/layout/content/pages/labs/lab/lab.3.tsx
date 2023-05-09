@@ -1,12 +1,12 @@
 import React from "react";
-import {store} from "../../../mst/stores/store.Root.Store";
+import {store} from "../../../../../mst/store/store.root";
 import {Button, Collapse, Form, Input, theme} from "antd";
 import {observer} from "mobx-react";
 import {CaretRightOutlined} from "@ant-design/icons";
 
 const { Panel } = Collapse;
 
-const Lab3 = observer(() => {
+const Lab_3 = observer(() => {
 
     const { token } = theme.useToken();
     const panelStyle = {
@@ -63,7 +63,7 @@ const Lab3 = observer(() => {
         }}>
             <Collapse
                 bordered={false}
-                defaultActiveKey={['2']}
+                //defaultActiveKey={['2']}
                 expandIcon={({ isActive }) => <CaretRightOutlined rotate={isActive ? 90 : 0} />}
                 //style={{ background: token.colorBgContainer }}
 
@@ -120,14 +120,14 @@ const Lab3 = observer(() => {
                     </div>
                 </Panel>
                 <Panel header="Dummy Cart" key="1" style={panelStyle}>
-                    <p>
+                    <div>
                         <p>В store.carts снапшот этих данных https://dummyjson.com/carts</p>
                         <p>При каждом вызове observed рандомно генерируется число (от 1 до 20), выводится products из carts[число]  </p>
-                    </p>
+                    </div>
                     <ul>{dummyLines()}</ul>
                 </Panel>
             </Collapse>
         </div>
     )
 })
-export default Lab3
+export default Lab_3

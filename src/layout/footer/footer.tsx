@@ -7,7 +7,8 @@ const FooterCustom = () => {
     return (
         <Footer
             style={{
-                textAlign: 'center'
+                textAlign: 'center',
+                background: '#eee'
             }}
         >
             Kek Design ©2023 Created by Qrroll

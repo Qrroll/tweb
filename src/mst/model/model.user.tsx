@@ -1,7 +1,8 @@
 import { types } from 'mobx-state-tree'
+import LocalStorageService from "../local/local.service";
 
-export const User = types
-    .model("User", {
+export const modelUser = types
+    .model("modelUser", {
         name: '',
         group: '',
         surname: '',

@@ -1,9 +1,9 @@
 import React from "react";
-import {User} from "../../../mst/models/model.User";
+import {modelUser} from "../../../../../mst/model/model.user";
 
-const Lab2 = () => {
+const Lab_2 = () => {
 
-    const myData = User.create({
+    const myData = modelUser.create({
         surname: "Присакарь",
         name: "Сергей",
         group: "CR-203"
@@ -15,4 +15,4 @@ const Lab2 = () => {
         </div>
     )
 }
-export default Lab2
+export default Lab_2
